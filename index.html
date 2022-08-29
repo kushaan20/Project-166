@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Bulb AR</title>
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/whitehatjr/ar-gesture-handler/main/index.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+  
+  <a-scene vr-mode-ui = "enabled;false" arjs = "sourceType:webcam; debugUIEnabled:false; trakingMethod:best">
+
+    <a-assets >
+      <a-asset-item id="bulb" src ="assets/light-bulb/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-marker preset = "hiro">
+      <a-entity id="marker-hiro" gltf-model="#bulb" position="0 0 0" rotation="0 0 0" scale="2 2 2" gesture-detector></a-entity>
+    </a-marker>
+ 
+  </a-scene>
+</body>
+</html>
